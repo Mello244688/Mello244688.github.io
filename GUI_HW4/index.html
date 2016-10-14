@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+ File: /~smello/index.html
+ 91.461 Assignment: Creating Your First Web Page
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author. 
+
+Description: This is just a simple webpage that shows some info about myself
+Date created: 10/04/2016
+-->
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Scott Mello's Webpage</title>
+	<link href="css/MyPage.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="MyHeader">
+	<h1 class="ShadowyText">Scott Mello</h1>
+	
+	<img src="imgs/me.jpg" alt="me" style="width:200px;height:250px;" title="At my cousins wedding"/>
+
+	<div class="dropdown">
+		<button class="dropbtn">Assignments</button>
+		<div class="dropdown-content">
+			<a href="HW2_Index.html">Assignment 2</a>
+			<a href="HW3_Index.html">Assignment 3</a>
+			<a href="index.html">Assignment 4</a>
+		</div>
+	</div> 
+	
+	<hr/>
+	
+</div> <!-- End of div #MyHeader -->
+
+<h2 class="ShadowyText">About Me:</h2>
+
+<div id="MyInterests">
+	<h3 class="ShadowyText"> My Interests</h3>
+
+	<ul id="list1">
+		<li>Football</li>
+		<li>Programming</li>
+		<li>Anime</li>
+		<li>Books</li>
+	</ul>
+	
+	<ul>
+		<li><img class="Image" alt="Patriots" src="imgs/patriots.png" /></li>
+		<li><img class="Image" alt="Computer" src="imgs/computer.jpg" /></li>
+		<li><img class="Image" alt ="Goku" src="imgs/goku.png" /></li>
+		<li><img class="Image" alt="Book" src="imgs/book.png" /></li>
+	</ul>
+</div>
+
+<table class="TableDimens">
+	<tr>
+		<th>Favorite Football Players</th>
+		<th>Favorite Programming Languages</th>
+		<th>Favorite Anime</th>
+		<th>Favorite Book Series</th>
+	</tr>
+	<tr>
+		<td>Tom Brady</td>
+		<td>C#</td>
+		<td>Dragonball Z</td>
+		<td>A Song Of Ice And Fire</td>
+	</tr>
+	<tr>
+		<td>Rob Gronkowski</td>
+		<td>Java</td>
+		<td>Samurai Champloo</td>
+		<td>The Legend Of Drizzt</td>
+	</tr>
+	<tr>
+		<td>Antonio Brown</td>
+		<td>C++</td>
+		<td>Bleach</td>
+		<td>Sword Of Truth</td>
+	</tr>
+</table>
+
+<div id="Link">
+	<a class="ShadowyText" href="http://www.google.com">My Favorite Webpage</a>
+</div>
+
+<h2 class="ShadowyText">Info:</h2>
+
+<p>I am creating this web page for my <strong>GUI</strong> class.</p>
+
+<dl>
+	<!-- definition was taken from wikipedia-->
+	<dt><u>GUI:</u></dt> <dd>In computer science, a <strong>graphical user interface (GUI)</strong>, 
+	is a type of user interface that allows users to interact with electronic devices 
+	through graphical icons and visual indicators such as secondary notation, 
+	instead of text-based user interfaces, typed command labels or text navigation.</dd>
+</dl>
+
+</body>
+
+<footer>
+	<img class="BadgeDimens" src="imgs/html5_badge.png" alt="HTML Badge" />
+	<img class="BadgeDimens" src="imgs/css3_badge.png" alt="CSS3 Badge" />
+</footer>
+</html>
