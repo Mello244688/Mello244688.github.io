@@ -79,7 +79,7 @@ input[type=reset] {
 	color: white;
 }
 
-button:hover {
+#NumberForm button:hover {
 	background-color: #45a049;
 }
 

@@ -110,6 +110,8 @@ function DeleteTable(tableId) {
 
 function onResetClicked(table) {
 	var emptyString = "";
+	var submitButton = document.getElementById('submitButton');
+	var bgColor = "#4CAF50";
 	if(table) {
 		DeleteTable(table.id);
 	}
@@ -127,6 +129,10 @@ function onResetClicked(table) {
 	document.getElementById('num10').style.border = emptyString;
 	//enabling submit button
 	document.getElementById('submitButton').removeAttribute("disabled");
+	//adding bgcolor to submitButton
+	if (submitButton.style.backgroundColor != bgColor) {
+		submitButton.style.backgroundColor = "#4CAF50";
+	}
 }
 
 function AddCaption(tableId) {
@@ -141,6 +147,7 @@ function validateInput(textBox) {
 	var isValid = true; //used to check validity of current textbox
 	var inputs = document.querySelectorAll('#NumberForm input[type=text]');
 	var canSubmit = true;
+	var emptyString = "";
 	
 	//checking that the text value is a number for current textbox
 	if (isNaN(textBox.value )) {
@@ -156,23 +163,31 @@ function validateInput(textBox) {
 		}
 	}
 	
+	var submitButton = document.getElementById('submitButton');
 	 //all text inputs are valid. enable submit button and remove red border 
 	 //from textbox
 	if (canSubmit && isValid) {
-		document.getElementById('submitButton').removeAttribute("disabled");
+		submitButton.removeAttribute("disabled");
 		textBox.style.border = "";
+		if (submitButton.style.backgroundColor != "#4CAF50") {
+			submitButton.style.backgroundColor = "#4CAF50";
+		}
+		
+		
 	}
 	//the current textbox input is valid but not others. remove red border
 	//from textbox. disable the submit button
 	else if (isValid) { 
 		textBox.style.border = "";
-		document.getElementById('submitButton').setAttribute("disabled", "disabled");
+		submitButton.setAttribute("disabled", "disabled");
+		submitButton.style.backgroundColor = "#d9d9d9";
 	}
 	//current textbox input is invalid. disable the submit button and set a 
 	//red border to current text box
 	else { 
-		document.getElementById('submitButton').setAttribute("disabled", "disabled");
+		submitButton.setAttribute("disabled", "disabled");
 		textBox.style.border = "2px solid red";
+		submitButton.style.backgroundColor = "#d9d9d9";
 	}
 }
 
@@ -189,4 +204,15 @@ function SetDefaultInputs(multiplicand, multiplier) {
 			multiplier[i] = 0;
 		}
 	}
+}
+
+//only fires when submit button enabled
+function SetBgColor(submitButton) {
+	submitButton.style.backgroundColor = "#4CAF50";
+	
+}
+//only fires when submit button enabled
+function SetHoverColor(submitButton) {
+	submitButton.style.backgroundColor = "#45a049";
+	
 }
