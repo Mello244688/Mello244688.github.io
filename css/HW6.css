@@ -1,0 +1,88 @@
+/*
+ File: /css/HW6.css
+ 91.461 Assignment 6: Creating an Interactive Dynamic Table
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author. 
+
+Description: The is the CSS for a single page web app that dynamically creates 
+			 a multiplication table based on form input from the user
+Date created: 10/24/2016
+*/
+div {
+	display: block;
+	margin: 0 auto;
+}
+
+html {
+	background-color: #e9fce9;
+}
+
+#NumberForm {
+	display: block;
+	border: 2px solid #3377ff;
+	width: 50%;
+	color: #3377ff;
+	background-color: #FFFFE6;
+	border-radius: 20px;
+	min-width: 540px;
+	font-size: 18px;
+}
+
+#NumberForm form {
+	margin: auto;
+	padding: 15px;
+}
+
+#inputs {
+	padding-left: 25px;
+}
+
+#Multiplicand {
+	display: inline-block;
+	width: 49%;
+}
+
+#Multiplier{
+	display: inline-block;
+	width: 49%;
+}
+
+input[type=text], select {
+	width: 95%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-sizing: border-box;
+}
+
+button {
+	cursor: pointer;
+	padding: 14px 20px;
+	width: 49.5%;
+	border: 0px;
+	border-radius: 8px;
+	background-color: #4CAF50;
+	color: white;
+}
+
+input[type=reset] {
+	cursor: pointer;
+	padding: 14px 20px;
+	width: 49.5%;
+	border: 0px;
+	border-radius: 8px;
+	background-color: #4CAF50;
+	color: white;
+}
+
+button:hover {
+	background-color: #45a049;
+}
+
+input[type=reset]:hover {
+	background-color: #45a049
+}

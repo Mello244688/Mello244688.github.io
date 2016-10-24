@@ -1,0 +1,68 @@
+<DOCTYPE! html>
+<!--
+ File: HW6_HTML.html
+ 91.461 Assignment 6: Creating an Interactive Dynamic Table
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author. 
+
+Description: The is the html for a single page web app that dynamically creates 
+			 a multiplication table based on form input from the user
+Date created: 10/24/2016
+-->
+<html>
+
+<head>
+	<title>Homework 6</title>
+	<link rel="stylesheet" href="css/HW6.css">
+</head>
+
+<body>
+	<div id="NumberForm">
+		<form onreset="onResetClicked(document.getElementById('myTable'))">
+		<div id="inputs">
+			<div id="Multiplicand">
+				Multiplicand 1:<br>
+				<input type="text" id="num1" oninput="validateInput(document.getElementById('num1'))">
+				<br>
+				Multiplicand 2:<br>
+				<input type="text" id="num2" oninput="validateInput(document.getElementById('num2'))">
+				<br>
+				Multiplicand 3:<br>
+				<input type="text" id="num3" oninput="validateInput(document.getElementById('num3'))">
+				<br>
+				Multiplicand 4:<br>
+				<input type="text" id="num4" oninput="validateInput(document.getElementById('num4'))">
+				Multiplicand 5:
+				<br>
+				<input type="text" id="num5" oninput="validateInput(document.getElementById('num5'))">
+			</div>
+			<div id="Multiplier">
+				Multiplier 1:<br>
+				<input type="text" id="num6" oninput="validateInput(document.getElementById('num6'))">
+				<br>
+				Multiplier 2:<br>
+				<input type="text" id="num7" oninput="validateInput(document.getElementById('num7'))">
+				<br>
+				Multiplier 3:<br>
+				<input type="text" id="num8" oninput="validateInput(document.getElementById('num8'))">
+				<br>
+				Multiplier 4:<br>
+				<input type="text" id="num9" oninput="validateInput(document.getElementById('num9'))">
+				Multiplier 5:
+				<br>
+				<input type="text" id="num10" oninput="validateInput(document.getElementById('num10'))">
+			</div>
+		</div>
+			<br>
+			<button onclick="onSubmitClicked() "type="button" id="submitButton">Submit</button>
+			<input type="reset" value="Reset">
+		</form>
+	</div>
+	
+	<script src="js/HW6.js"></script>
+	
+</body>
+
+</html>
