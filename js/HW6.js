@@ -83,6 +83,13 @@ function CreateTable(multiplicand, multiplier) {
 			}
 			cell.appendChild(cellText); //adding text to cell;
 			cell.style.border = "1px solid black";
+			if (i == 0) {
+				cell.style.fontSize = "1.2em";
+			}
+			if (j == 0) {
+				cell.style.fontSize = "1.2em";
+			}
+			
 			cell.style.borderRadius = "2px";
 			cell.style.textAlign = "center";
 			row.appendChild(cell); //adding cell to row
