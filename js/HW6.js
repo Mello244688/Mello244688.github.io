@@ -1,15 +1,16 @@
-// File: /js/HW6.js
-// 91.461 Assignment 6: Creating an Interactive Dynamic Table
-// Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
-// Copyright (c) 2016 by Scott Mello. All rights reserved. May be
-// freely copied or excerpted for educational purposes with credit to the
-// author. 
+/* File: /js/HW6.js
+ 91.461 Assignment 6: Creating an Interactive Dynamic Table
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+ freely copied or excerpted for educational purposes with credit to the
+ author. 
 
-// Description: The is the JabaScript for a single page web app that dynamically 
-// 				creates a multiplication table based on form input from the user
-// Date created: 10/24/2016
+ Description: The is the JabaScript for a single page web app that dynamically 
+ 				creates a multiplication table based on form input from the user
+ Date created: 10/24/2016 */
 
 function onSubmitClicked() {
+	//getting the user input values
 	var num1 = document.getElementById("num1").value;
 	var num2 = document.getElementById("num2").value;
 	var num3 = document.getElementById("num3").value;
@@ -110,6 +111,8 @@ function DeleteTable(tableId) {
 
 function onResetClicked(table) {
 	var emptyString = "";
+	var strCursorPointer = "pointer";
+	var strCursorNot = "not-allowed";
 	var submitButton = document.getElementById('submitButton');
 	var bgColor = "#4CAF50";
 	if(table) {
@@ -129,9 +132,13 @@ function onResetClicked(table) {
 	document.getElementById('num10').style.border = emptyString;
 	//enabling submit button
 	document.getElementById('submitButton').removeAttribute("disabled");
-	//adding bgcolor to submitButton
+	//adding default bgcolor to submitButton
 	if (submitButton.style.backgroundColor != bgColor) {
 		submitButton.style.backgroundColor = "#4CAF50";
+	}
+	//ressting the cursor to pointer
+	if (submitButton.style.cursor == strCursorNot) {
+		submitButton.style.cursor = strCursorPointer;
 	}
 }
 
@@ -148,6 +155,8 @@ function validateInput(textBox) {
 	var inputs = document.querySelectorAll('#NumberForm input[type=text]');
 	var canSubmit = true;
 	var emptyString = "";
+	var strCursorPointer = "pointer";
+	var strCursorNot = "not-allowed";
 	
 	//checking that the text value is a number for current textbox
 	if (isNaN(textBox.value )) {
@@ -172,6 +181,10 @@ function validateInput(textBox) {
 		if (submitButton.style.backgroundColor != "#4CAF50") {
 			submitButton.style.backgroundColor = "#4CAF50";
 		}
+		if (submitButton.style.cursor != strCursorPointer) {
+			submitButton.style.cursor = strCursorPointer;
+		}
+		
 		
 		
 	}
@@ -181,6 +194,7 @@ function validateInput(textBox) {
 		textBox.style.border = "";
 		submitButton.setAttribute("disabled", "disabled");
 		submitButton.style.backgroundColor = "#d9d9d9";
+		submitButton.style.cursor = strCursorNot;
 	}
 	//current textbox input is invalid. disable the submit button and set a 
 	//red border to current text box
@@ -188,6 +202,7 @@ function validateInput(textBox) {
 		submitButton.setAttribute("disabled", "disabled");
 		textBox.style.border = "2px solid red";
 		submitButton.style.backgroundColor = "#d9d9d9";
+		submitButton.style.cursor = strCursorNot;
 	}
 }
 
