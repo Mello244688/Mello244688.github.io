@@ -23,10 +23,12 @@ html {
 	display: block;
 	border: 2px solid #3377ff;
 	width: 50%;
+	height: 33%;
 	color: #3377ff;
 	background-color: #FFFFE6;
 	border-radius: 20px;
 	min-width: 540px;
+	min-height: 252px;
 	font-size: 18px;
 }
 
@@ -36,15 +38,26 @@ html {
 }
 
 #inputs {
-	padding-left: 25px;
+	padding-left: 10px;
+	width: 100%;
 }
 
-#Multiplicand {
+#MultiplicandStart {
 	display: inline-block;
 	width: 49%;
 }
 
-#Multiplier{
+#MultiplicandEnd {
+	display: inline-block;
+	width: 49%;
+}
+
+#MultiplierStart {
+	display: inline-block;
+	width: 49%;
+}
+
+#MultiplierEnd {
 	display: inline-block;
 	width: 49%;
 }

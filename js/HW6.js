@@ -11,21 +11,28 @@
 
 function onSubmitClicked() {
 	//getting the user input values
-	var num1 = document.getElementById("num1").value;
-	var num2 = document.getElementById("num2").value;
-	var num3 = document.getElementById("num3").value;
-	var num4 = document.getElementById("num4").value;
-	var num5 = document.getElementById("num5").value;
-	var num6 = document.getElementById("num6").value;
-	var num7 = document.getElementById("num7").value;
-	var num8 = document.getElementById("num8").value;
-	var num9 = document.getElementById("num9").value;
-	var num10 = document.getElementById("num10").value;
+	var mCandStart = document.getElementById("num1").value;
+	var mCandEnd = document.getElementById("num2").value;
+	var mPlierStart = document.getElementById("num3").value;
+	var mPlierEnd = document.getElementById("num4").value;
+	var maxCells = 100000;
 	
-	var multiplicand = [num1, num2, num3, num4, num5];
-	var multiplier = [num6, num7, num8, num9, num10];
+	var multiplicand = [];
+	var multiplier = [];
 	
 	var tableId = "myTable";
+	
+	multiplicand = GetNumberRange(mCandStart, mCandEnd);
+	multiplier = GetNumberRange(mPlierStart, mPlierEnd);
+	
+	//warning about creating overly large tables. gives the option to abort
+	if (multiplicand.length * multiplier.length > maxCells) {
+		if (confirm("WARNING: You are trying to create a table with " 
+		+ multiplicand.length * multiplier.length 
+		+ " cells. This is not Recommended\n\nPress OK to contine\nPress CANCEL to abort" ) == false) {
+			exit(1);
+		}
+	}
 	
 	//setting inputs to zero if they were not provided
 	SetDefaultInputs(multiplicand, multiplier);
@@ -49,11 +56,13 @@ function CreateTable(multiplicand, multiplier) {
 	tableDiv.id = 'tableDiv'; //div that table goes in
 	tableDiv.style.width = "50%"; //setting width of div
 	tableDiv.style.minWidth = "540px"; //setting the minimum width of div
+	tableDiv.style.maxHeight = "400px";
 	tableDiv.style.padding = "25px"; //padding for div
 	tableDiv.style.border = "2px solid #3377ff"; //border for div
 	tableDiv.style.borderRadius = "8px"; //border radius of div
 	tableDiv.style.backgroundColor = "#FFFFE6"; //div bgcolor
 	tableDiv.style.marginTop = "15px"; //putting space between form and table
+	tableDiv.style.overflow = "auto";
 	
 	for (var i = 0; i < multiplicand.length + 1; i++) {
 		var row = document.createElement("TR");
@@ -131,12 +140,7 @@ function onResetClicked(table) {
 	document.getElementById('num2').style.border = emptyString;
 	document.getElementById('num3').style.border = emptyString;
 	document.getElementById('num4').style.border = emptyString;
-	document.getElementById('num5').style.border = emptyString; 
-	document.getElementById('num6').style.border = emptyString;
-	document.getElementById('num7').style.border = emptyString;
-	document.getElementById('num8').style.border = emptyString;
-	document.getElementById('num9').style.border = emptyString;
-	document.getElementById('num10').style.border = emptyString;
+
 	//enabling submit button
 	document.getElementById('submitButton').removeAttribute("disabled");
 	//adding default bgcolor to submitButton
@@ -164,9 +168,10 @@ function validateInput(textBox) {
 	var emptyString = "";
 	var strCursorPointer = "pointer";
 	var strCursorNot = "not-allowed";
+	var value = +(textBox.value);
 	
 	//checking that the text value is a number for current textbox
-	if (isNaN(textBox.value )) {
+	if (isNaN(value)) {
 		isValid = false;
 	}
 	else {
@@ -226,6 +231,25 @@ function SetDefaultInputs(multiplicand, multiplier) {
 			multiplier[i] = 0;
 		}
 	}
+}
+
+function GetNumberRange(numStart, numEnd) {
+		var numRange = [];
+		numStart = +numStart;
+		numEnd = +numEnd;
+
+		if (numStart < numEnd) {
+			
+			for (var i = numStart; i <= numEnd; i++) {
+				numRange.push(i);
+			}	
+		}
+		else { //larger starting number
+			for (var i = numStart; i >= numEnd; i--) {
+				numRange.push(i);
+			}
+		}
+		return numRange;
 }
 
 //only fires when submit button enabled

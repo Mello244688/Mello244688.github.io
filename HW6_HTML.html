@@ -23,36 +23,28 @@ Date created: 10/24/2016
 		<form onreset="onResetClicked(document.getElementById('myTable'))">
 		<div id="inputs">
 			<div id="Multiplicand">
-				Multiplicand 1:<br>
-				<input type="text" id="num1" oninput="validateInput(document.getElementById('num1'))">
-				<br>
-				Multiplicand 2:<br>
-				<input type="text" id="num2" oninput="validateInput(document.getElementById('num2'))">
-				<br>
-				Multiplicand 3:<br>
-				<input type="text" id="num3" oninput="validateInput(document.getElementById('num3'))">
-				<br>
-				Multiplicand 4:<br>
-				<input type="text" id="num4" oninput="validateInput(document.getElementById('num4'))">
-				Multiplicand 5:
-				<br>
-				<input type="text" id="num5" oninput="validateInput(document.getElementById('num5'))">
+				<div id="MultiplicandStart">
+					Multiplicand Starting Range:<br>
+					<input type="text" id="num1" oninput="validateInput(document.getElementById('num1'))">
+					<br>
+				</div>
+				<div id="MultiplicandEnd">
+					Multiplicand Ending Range:<br>
+					<input type="text" id="num2" oninput="validateInput(document.getElementById('num2'))">
+					<br>
+				</div>
 			</div>
 			<div id="Multiplier">
-				Multiplier 1:<br>
-				<input type="text" id="num6" oninput="validateInput(document.getElementById('num6'))">
-				<br>
-				Multiplier 2:<br>
-				<input type="text" id="num7" oninput="validateInput(document.getElementById('num7'))">
-				<br>
-				Multiplier 3:<br>
-				<input type="text" id="num8" oninput="validateInput(document.getElementById('num8'))">
-				<br>
-				Multiplier 4:<br>
-				<input type="text" id="num9" oninput="validateInput(document.getElementById('num9'))">
-				Multiplier 5:
-				<br>
-				<input type="text" id="num10" oninput="validateInput(document.getElementById('num10'))">
+				<div id="MultiplierStart">
+					Multiplier Starting Range:<br>
+					<input type="text" id="num3" oninput="validateInput(document.getElementById('num3'))">
+					<br>
+				</div>
+				<div id="MultiplierEnd">
+					Multiplier Ending Range:<br>
+					<input type="text" id="num4" oninput="validateInput(document.getElementById('num4'))">
+					<br>
+				</div>
 			</div>
 		</div>
 			<br>
