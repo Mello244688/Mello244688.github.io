@@ -8,53 +8,54 @@ freely copied or excerpted for educational purposes with credit to the
 author. 
 
 Description: The is the html for a single page web app that dynamically creates 
-			 a multiplication table based on form input from the user
+             a multiplication table based on form input from the user
 Date created: 10/24/2016
 -->
-<html>
+<html lang="en">
 
 <head>
-	<title>Homework 6</title>
-	<link rel="stylesheet" href="css/HW6.css">
+    <meta charset="UTF-8">
+    <title>Homework 6</title>
+    <link rel="stylesheet" href="css/HW6.css">
 </head>
 
 <body>
-	<div id="NumberForm">
-		<form onreset="onResetClicked(document.getElementById('myTable'))">
-		<div id="inputs">
-			<div id="Multiplicand">
-				<div id="MultiplicandStart">
-					Multiplicand Starting Range:<br>
-					<input type="text" id="num1" oninput="validateInput(document.getElementById('num1'))">
-					<br>
-				</div>
-				<div id="MultiplicandEnd">
-					Multiplicand Ending Range:<br>
-					<input type="text" id="num2" oninput="validateInput(document.getElementById('num2'))">
-					<br>
-				</div>
-			</div>
-			<div id="Multiplier">
-				<div id="MultiplierStart">
-					Multiplier Starting Range:<br>
-					<input type="text" id="num3" oninput="validateInput(document.getElementById('num3'))">
-					<br>
-				</div>
-				<div id="MultiplierEnd">
-					Multiplier Ending Range:<br>
-					<input type="text" id="num4" oninput="validateInput(document.getElementById('num4'))">
-					<br>
-				</div>
-			</div>
-		</div>
-			<br>
-			<button onclick="onSubmitClicked()" onmouseenter="SetHoverColor(document.getElementById('submitButton'))" onmouseleave="SetBgColor(document.getElementById('submitButton'))" type="button" id="submitButton">Submit</button>
-			<input type="reset" value="Reset">
-		</form>
-	</div>
-	
-	<script src="js/HW6.js"></script>
-	
+    <div id="NumberForm">
+        <form onreset="onResetClicked(document.getElementById('myTable'))">
+        <div id="inputs">
+            <div id="Multiplicand">
+                <div id="MultiplicandStart">
+                    Multiplicand Starting Range:<br>
+                    <input type="text" id="num1" oninput="validateInput(document.getElementById('num1'))">
+                    <br>
+                </div>
+                <div id="MultiplicandEnd">
+                    Multiplicand Ending Range:<br>
+                    <input type="text" id="num2" oninput="validateInput(document.getElementById('num2'))">
+                    <br>
+                </div>
+            </div>
+            <div id="Multiplier">
+                <div id="MultiplierStart">
+                    Multiplier Starting Range:<br>
+                    <input type="text" id="num3" oninput="validateInput(document.getElementById('num3'))">
+                    <br>
+                </div>
+                <div id="MultiplierEnd">
+                    Multiplier Ending Range:<br>
+                    <input type="text" id="num4" oninput="validateInput(document.getElementById('num4'))">
+                    <br>
+                </div>
+            </div>
+        </div>
+            <br>
+            <button onclick="onSubmitClicked()" onmouseenter="SetHoverColor(document.getElementById('submitButton'))" onmouseleave="SetBgColor(document.getElementById('submitButton'))" type="button" id="submitButton">Submit</button>
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+    
+    <script src="js/HW6.js"></script>
+    
 </body>
 
 </html>
