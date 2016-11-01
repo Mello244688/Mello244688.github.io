@@ -9,19 +9,24 @@
                 creates a multiplication table based on form input from the user
  Date created: 10/24/2016 */
 
+ /**
+ * Retrieves user input to create table. Fires when the submit button is clicked. 
+ */
 function onSubmitClicked() {
+    
+    var maxCells = 100000; //the max cells in a table without prompting warning
+    var tableId = "myTable"; //the id for the dynamically created table
+    
     //getting the user input values
     var mCandStart = document.getElementById("num1").value;
     var mCandEnd = document.getElementById("num2").value;
     var mPlierStart = document.getElementById("num3").value;
     var mPlierEnd = document.getElementById("num4").value;
-    var maxCells = 100000;
     
-    var multiplicand = [];
-    var multiplier = [];
+    var multiplicand = [];//array values for the mutiplicand range
+    var multiplier = [];//array values for the multiplier range
     
-    var tableId = "myTable";
-    
+    //populating arrays with the multiplicand and multplier number ranges
     multiplicand = GetNumberRange(mCandStart, mCandEnd);
     multiplier = GetNumberRange(mPlierStart, mPlierEnd);
     
@@ -36,42 +41,71 @@ function onSubmitClicked() {
     
     //setting inputs to zero if they were not provided
     SetDefaultInputs(multiplicand, multiplier);
-    DeleteTable(tableId); //deleting table if there is one
-    CreateTable(multiplicand, multiplier);
+    
+    //deleting table if there is one
+    DeleteTable(tableId);
+    
+    //creating table from the multiplicand and multiplier ranges
+    CreateTable(multiplicand, multiplier, tableId);
+    
+    //adding a caption to a table
     AddCaption(tableId);
 
 }
-function CreateTable(multiplicand, multiplier) {
-    var body = document.body;
-    var table = document.createElement("table");
-    var id = "myTable"; //id of the table
-    var empty = "";
-    var tableDiv = document.createElement('div');
+
+/**
+* dynamically creates table in body of html based on 2 user ranges
+* @param multiplicand: array of ints representing the vertical left column of table
+* @param multiplier: array of ints representing the horizontal top row of table
+* @param id: string representation of the table ID
+*/
+function CreateTable(multiplicand, multiplier, id) {
+    var body = document.body; //html body
+    var table = document.createElement("table"); //creating empty table
+    var empty = ""; //used to compare empty strings
+    var tableDiv = document.createElement('div'); //creating div for table
     
-    table.setAttribute('id', id); //setting id of table
-    table.style.width = "95%"; //setting width of table
-    table.style.border = "1px solid black"; //setting table border
-    table.style.borderRadius = "8px"; //setting border radius of table
-    table.style.margin = "0 auto"; //centering the table
-    tableDiv.id = 'tableDiv'; //div that table goes in
-    tableDiv.style.width = "50%"; //setting width of div
-    tableDiv.style.minWidth = "540px"; //setting the minimum width of div
+    //formatting the table
+    table.setAttribute('id', id);
+    table.style.width = "95%";
+    table.style.border = "1px solid black";
+    table.style.borderRadius = "8px";
+    table.style.margin = "0 auto";
+    
+    //formatting the div for the table
+    tableDiv.id = 'tableDiv'; 
+    tableDiv.style.minWidth = "540px";
     tableDiv.style.maxHeight = "400px";
-    tableDiv.style.padding = "25px"; //padding for div
-    tableDiv.style.border = "2px solid #3377ff"; //border for div
-    tableDiv.style.borderRadius = "8px"; //border radius of div
-    tableDiv.style.backgroundColor = "#FFFFE6"; //div bgcolor
-    tableDiv.style.marginTop = "15px"; //putting space between form and table
+    tableDiv.style.padding = "25px";
+    tableDiv.style.border = "2px solid #3377ff";
+    tableDiv.style.borderRadius = "8px";
+    tableDiv.style.backgroundColor = "#FFFFE6";
+    tableDiv.style.marginTop = "15px";
     tableDiv.style.overflow = "auto";
     
+    //setting table width based on length of multiplier
+    if (multiplier.length < 15) {
+        tableDiv.style.width = "50%";
+    }
+    else if (multiplier.length < 30) {
+        tableDiv.style.width = "65%";
+    }
+    else if (multiplier.length < 40) {
+        tableDiv.style.width = "80%";
+    }
+    else {
+        tableDiv.style.width = "95%";
+    }
+    
+    //populating table
     for (var i = 0; i < multiplicand.length + 1; i++) {
-        var row = document.createElement("TR");
-        var cell;
+        var row = document.createElement("TR"); //creating table row
+        var cell; //used for creating table cells
+        var cellText; //text that goes in cell
         
         for (var j = 0; j < multiplier.length + 1; j++) {
-            if (i == 0) { //create table heading
+            if (i == 0) { //In the first row. create table headings
                 cell = document.createElement("TH");
-                var cellText;
                 
                 if (j == 0) { //should be an empty heading at 0, 0
                     cellText = document.createTextNode(empty);
@@ -85,22 +119,23 @@ function CreateTable(multiplicand, multiplier) {
                     cell = document.createElement("TH");
                     cellText = document.createTextNode(multiplicand[i - 1]);
                 }
-                else {
+                else { //not first element in row
                     cell = document.createElement("TD");
                     cellText = document.createTextNode(multiplicand[i - 1] * multiplier[j - 1]);
                 }
             }
             cell.appendChild(cellText); //adding text to cell;
+            
+            //formatting table cells
             cell.style.border = "1px solid black";
-            if (i == 0) {
-                cell.style.fontSize = "1.2em";
-            }
-            if (j == 0) {
+            cell.style.borderRadius = "2px";
+            cell.style.textAlign = "center";
+            
+            //increasing font size of all table headings
+            if (i == 0 || j == 0) {
                 cell.style.fontSize = "1.2em";
             }
             
-            cell.style.borderRadius = "2px";
-            cell.style.textAlign = "center";
             row.appendChild(cell); //adding cell to row
         }
         if (i % 2 == 1) { //setting odd rows bgcolor to gray
@@ -111,26 +146,39 @@ function CreateTable(multiplicand, multiplier) {
         }
         table.appendChild(row); //adding row to table
     }
-    tableDiv.appendChild(table);
-    body.appendChild(tableDiv);
+    tableDiv.appendChild(table); //adding table to div
+    body.appendChild(tableDiv); //adding div to html body
 }
 
+/**
+* deletes a table given the id. If there is a specific div called tableDiv, it\
+* will also be deleted
+* @param tableId: string representing the id of the table
+*/
 function DeleteTable(tableId) {
-    var table = document.getElementById(tableId);
-    var div = document.getElementById('tableDiv');
-    //deleting table then div
+    var table = document.getElementById(tableId); //getting the table
+    var div = document.getElementById('tableDiv'); //getting the tables div
+    //deleting table then div if they are not null
     if (table != null) {
-        table.parentNode.removeChild(table);
+        table.parentNode.removeChild(table);        
+    }
+    if (div != null) {
         div.parentNode.removeChild(div);
     }
 }
 
+/**
+* resets everything on the page to defaults. deletes table if there is one.
+* @param table: An html element object that represents a table
+*/
 function onResetClicked(table) {
-    var emptyString = "";
-    var strCursorPointer = "pointer";
-    var strCursorNot = "not-allowed";
-    var submitButton = document.getElementById('submitButton');
-    var bgColor = "#4CAF50";
+    var emptyString = ""; //compare to empty strings
+    var strCursorPointer = "pointer"; //for setting the cursor to pointer
+    var strCursorNot = "not-allowed"; //for checking if cursor is set to not-allowed
+    var submitButton = document.getElementById('submitButton'); //getting submit button
+    var bgColor = "#4CAF50"; //used for resetting the color of submit button
+    
+    //if there is a table, delete it
     if(table) {
         DeleteTable(table.id);
     }
@@ -143,16 +191,21 @@ function onResetClicked(table) {
 
     //enabling submit button
     document.getElementById('submitButton').removeAttribute("disabled");
+    
     //adding default bgcolor to submitButton
     if (submitButton.style.backgroundColor != bgColor) {
         submitButton.style.backgroundColor = "#4CAF50";
     }
-    //ressting the cursor to pointer
+    //resetting the cursor to pointer
     if (submitButton.style.cursor == strCursorNot) {
         submitButton.style.cursor = strCursorPointer;
     }
 }
 
+/**
+* Adds a caption to a table
+* @param tableId: a string representation of a table id
+*/
 function AddCaption(tableId) {
     var tableCaption = document.getElementById(tableId).createCaption();
     tableCaption.innerHTML = "<b>Multiplication Table</b>";
@@ -161,14 +214,20 @@ function AddCaption(tableId) {
     tableCaption.style.paddingBottom = "10px";
 }
 
+/**
+* text input event handler that validates user input
+* @param textBox: an html element object that represent user text input
+*/
 function validateInput(textBox) {
     var isValid = true; //used to check validity of current textbox
+    
+    //retrieves all input values of text and puts them into an array
     var inputs = document.querySelectorAll('#NumberForm input[type=text]');
-    var canSubmit = true;
-    var emptyString = "";
-    var strCursorPointer = "pointer";
-    var strCursorNot = "not-allowed";
-    var value = +(textBox.value);
+    var canSubmit = true; //whether or not the submit button can be pressed
+    var emptyString = ""; //compared to empty strings
+    var strCursorPointer = "pointer"; //used to set cursor to pointer
+    var strCursorNot = "not-allowed"; //used to set cursot to not-allowed
+    var value = +(textBox.value); //retrieving textbox value as an int
     
     //checking that the text value is a number for current textbox
     if (isNaN(value)) {
@@ -184,7 +243,9 @@ function validateInput(textBox) {
         }
     }
     
+    //getting the submit button
     var submitButton = document.getElementById('submitButton');
+    
      //all text inputs are valid. enable submit button and remove red border 
      //from textbox
     if (canSubmit && isValid) {
@@ -218,13 +279,19 @@ function validateInput(textBox) {
     }
 }
 
+/**
+* sets the user input arrays to zero
+* @param multiplicand: array of ints representing the vertical left column of table
+* @param multiplier: array of ints representing the horizontal top row of table
+*/
 function SetDefaultInputs(multiplicand, multiplier) {
+    //setting all text inputs to zero if they were not provided
     for (var i = 0; i < multiplicand.length; i++) {
         if (multiplicand[i].length < 1) {
             multiplicand[i] = 0;
         }
     }
-    //setting inputs to zero if they were not provided
+    
     for (var i = 0; i < multiplier.length; i++) {
     
         if (multiplier[i].length < 1) {
@@ -233,11 +300,18 @@ function SetDefaultInputs(multiplicand, multiplier) {
     }
 }
 
+/**
+* returns a range of numbers based on a starting and ending range 
+* @param numStart: int representing the starting range
+* @param numEnd: int representing the ending range
+* @return: array of ints representing the number range
+*/
 function GetNumberRange(numStart, numEnd) {
-        var numRange = [];
-        numStart = +numStart;
-        numEnd = +numEnd;
-
+        var numRange = []; //range of numbers
+        numStart = +numStart; //converting to int
+        numEnd = +numEnd; //converting to int
+        
+        //populating the numRange array
         if (numStart < numEnd) {
             
             for (var i = numStart; i <= numEnd; i++) {
@@ -252,12 +326,21 @@ function GetNumberRange(numStart, numEnd) {
         return numRange;
 }
 
-//only fires when submit button enabled
+/**
+* event handler that sets the background color of the submit button when not hovering.
+* this event only fires while the submit button is enabled
+* @param submitButton: html element object representing the submit button
+*/
 function SetBgColor(submitButton) {
     submitButton.style.backgroundColor = "#4CAF50";
     
 }
-//only fires when submit button enabled
+
+/**
+* event handler that sets the background color of the submit button on hover.
+* this event only fires while the submit button is enabled
+* @param submitButton: html element object representing the submit button
+*/
 function SetHoverColor(submitButton) {
     submitButton.style.backgroundColor = "#45a049";
     

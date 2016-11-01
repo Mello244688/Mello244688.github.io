@@ -1,4 +1,4 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <!--
  File: HW6_HTML.html
  91.461 Assignment 6: Creating an Interactive Dynamic Table
@@ -12,50 +12,47 @@ Description: The is the html for a single page web app that dynamically creates
 Date created: 10/24/2016
 -->
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Homework 6</title>
-    <link rel="stylesheet" href="css/HW6.css">
-</head>
-
-<body>
-    <div id="NumberForm">
-        <form onreset="onResetClicked(document.getElementById('myTable'))">
-        <div id="inputs">
-            <div id="Multiplicand">
-                <div id="MultiplicandStart">
-                    Multiplicand Starting Range:<br>
-                    <input type="text" id="num1" oninput="validateInput(document.getElementById('num1'))">
-                    <br>
+    <head>
+        <meta charset="UTF-8">
+        <title>Homework 6</title>
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="css/HW6.css">
+        <!-- scripts -->
+        <script src="js/HW6.js"></script>
+    </head>
+    <body>
+        <div id="NumberForm">
+            <form onreset="onResetClicked(document.getElementById('myTable'))">
+                <div id="inputs">
+                    <div id="Multiplicand">
+                        <div id="MultiplicandStart">
+                            Multiplicand Starting Range:<br>
+                            <input type="text" id="num1" oninput="validateInput(document.getElementById('num1'))">
+                            <br>
+                        </div>
+                        <div id="MultiplicandEnd">
+                            Multiplicand Ending Range:<br>
+                            <input type="text" id="num2" oninput="validateInput(document.getElementById('num2'))">
+                            <br>
+                        </div>
+                    </div>
+                    <div id="Multiplier">
+                        <div id="MultiplierStart">
+                            Multiplier Starting Range:<br>
+                            <input type="text" id="num3" oninput="validateInput(document.getElementById('num3'))">
+                            <br>
+                        </div>
+                        <div id="MultiplierEnd">
+                            Multiplier Ending Range:<br>
+                            <input type="text" id="num4" oninput="validateInput(document.getElementById('num4'))">
+                            <br>
+                        </div>
+                    </div>
                 </div>
-                <div id="MultiplicandEnd">
-                    Multiplicand Ending Range:<br>
-                    <input type="text" id="num2" oninput="validateInput(document.getElementById('num2'))">
-                    <br>
-                </div>
-            </div>
-            <div id="Multiplier">
-                <div id="MultiplierStart">
-                    Multiplier Starting Range:<br>
-                    <input type="text" id="num3" oninput="validateInput(document.getElementById('num3'))">
-                    <br>
-                </div>
-                <div id="MultiplierEnd">
-                    Multiplier Ending Range:<br>
-                    <input type="text" id="num4" oninput="validateInput(document.getElementById('num4'))">
-                    <br>
-                </div>
-            </div>
+                <br>
+                <button onclick="onSubmitClicked()" onmouseenter="SetHoverColor(document.getElementById('submitButton'))" onmouseleave="SetBgColor(document.getElementById('submitButton'))" type="button" id="submitButton">Submit</button>
+                <input type="reset" value="Reset">
+            </form>
         </div>
-            <br>
-            <button onclick="onSubmitClicked()" onmouseenter="SetHoverColor(document.getElementById('submitButton'))" onmouseleave="SetBgColor(document.getElementById('submitButton'))" type="button" id="submitButton">Submit</button>
-            <input type="reset" value="Reset">
-        </form>
-    </div>
-    
-    <script src="js/HW6.js"></script>
-    
-</body>
-
+    </body>
 </html>

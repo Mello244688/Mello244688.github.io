@@ -10,17 +10,20 @@ Description: The is the CSS for a single page web app that dynamically creates
              a multiplication table based on form input from the user
 Date created: 10/24/2016
 */
+
+/* setting the backround color on the page */
+html {
+    background-color: #e9fce9;
+}
+
+/* centering all divs */
 div {
     display: block;
     margin: 0 auto;
 }
 
-html {
-    background-color: #e9fce9;
-}
-
+/* formatting Div around the form and reset button */
 #NumberForm {
-    display: block;
     border: 2px solid #3377ff;
     width: 50%;
     height: 33%;
@@ -32,36 +35,43 @@ html {
     font-size: 18px;
 }
 
+/* adding some padding to the form only */
 #NumberForm form {
-    margin: auto;
     padding: 15px;
+     
 }
 
+/* div around the text inputs */
 #inputs {
     padding-left: 10px;
     width: 100%;
 }
 
+/* div around the multiplicand starting range input */
 #MultiplicandStart {
     display: inline-block;
     width: 49%;
 }
 
+/* div around the multiplicand ending range input */
 #MultiplicandEnd {
     display: inline-block;
     width: 49%;
 }
 
+/* div around the multiplier starting range input */
 #MultiplierStart {
     display: inline-block;
     width: 49%;
 }
 
+/* div around the multiplier ending range input */
 #MultiplierEnd {
     display: inline-block;
     width: 49%;
 }
 
+/* formatting only text inputs */
 input[type=text], select {
     width: 95%;
     padding: 12px 20px;
@@ -72,6 +82,7 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+/* formatting the submit button */
 button {
     cursor: pointer;
     padding: 14px 20px;
@@ -82,6 +93,7 @@ button {
     color: white;
 }
 
+/* formatting the reset input (button) */
 input[type=reset] {
     cursor: pointer;
     padding: 14px 20px;
@@ -92,10 +104,12 @@ input[type=reset] {
     color: white;
 }
 
+/* setting background color when hovering on the submit button */
 #NumberForm button:hover {
     background-color: #45a049;
 }
 
+/* setting the background color when hovering on the reset input (button) */
 input[type=reset]:hover {
     background-color: #45a049
 }
