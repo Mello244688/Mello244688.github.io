@@ -47,7 +47,7 @@ div {
     width: 100%;
 }
 
-/* div around the multiplicand starting range input */
+/* divs around the text inputs */
 #MultiplicandStart, #MultiplicandEnd, #MultiplierStart, #MultiplierEnd {
     display: inline-block;
     width: 49%;
