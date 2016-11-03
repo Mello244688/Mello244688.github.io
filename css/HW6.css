@@ -48,25 +48,7 @@ div {
 }
 
 /* div around the multiplicand starting range input */
-#MultiplicandStart {
-    display: inline-block;
-    width: 49%;
-}
-
-/* div around the multiplicand ending range input */
-#MultiplicandEnd {
-    display: inline-block;
-    width: 49%;
-}
-
-/* div around the multiplier starting range input */
-#MultiplierStart {
-    display: inline-block;
-    width: 49%;
-}
-
-/* div around the multiplier ending range input */
-#MultiplierEnd {
+#MultiplicandStart, #MultiplicandEnd, #MultiplierStart, #MultiplierEnd {
     display: inline-block;
     width: 49%;
 }
