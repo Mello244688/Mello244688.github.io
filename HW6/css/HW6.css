@@ -1,0 +1,97 @@
+/*
+ File: /css/HW6.css
+ 91.461 Assignment 6: Creating an Interactive Dynamic Table
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author. 
+
+Description: The is the CSS for a single page web app that dynamically creates 
+             a multiplication table based on form input from the user
+Date created: 10/24/2016
+*/
+
+/* setting the backround color on the page */
+html {
+    background-color: #e9fce9;
+}
+
+/* centering all divs */
+div {
+    display: block;
+    margin: 0 auto;
+}
+
+/* formatting Div around the form and reset button */
+#NumberForm {
+    border: 2px solid #3377ff;
+    width: 50%;
+    height: 33%;
+    color: #3377ff;
+    background-color: #FFFFE6;
+    border-radius: 20px;
+    min-width: 540px;
+    min-height: 252px;
+    font-size: 18px;
+}
+
+/* adding some padding to the form only */
+#NumberForm form {
+    padding: 15px;
+     
+}
+
+/* div around the text inputs */
+#inputs {
+    padding-left: 10px;
+    width: 100%;
+}
+
+/* divs around the text inputs */
+#MultiplicandStart, #MultiplicandEnd, #MultiplierStart, #MultiplierEnd {
+    display: inline-block;
+    width: 49%;
+}
+
+/* formatting only text inputs */
+input[type=text], select {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* formatting the submit button */
+button {
+    cursor: pointer;
+    padding: 14px 20px;
+    width: 49.5%;
+    border: 0px;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* formatting the reset input (button) */
+input[type=reset] {
+    cursor: pointer;
+    padding: 14px 20px;
+    width: 49.5%;
+    border: 0px;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* setting background color when hovering on the submit button */
+#NumberForm button:hover {
+    background-color: #45a049;
+}
+
+/* setting the background color when hovering on the reset input (button) */
+input[type=reset]:hover {
+    background-color: #45a049
+}

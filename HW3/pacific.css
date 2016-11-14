@@ -1,0 +1,113 @@
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+html, body {
+    height: 100%;
+}
+body {
+	background-image: url("ptrbackground.JPG");
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    display:inline-block;
+    width: 100%;
+    height: 56px;
+    background-image: url("sunset.JPG");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #000032;
+    
+}
+#wrapper {
+    margin: 0 auto;
+    width: 80%;
+    min-width: 600px;
+    background-color: lightblue;
+}
+#content {
+    display: inline-block;
+    background-color: white;
+    padding-left: 10px;
+    background-color: white;
+    width: calc(100% - 201px);
+    margin-left: 4px;
+    border-right: 2px solid white;
+}
+nav {
+    float: left;
+    width: 185px;
+    background-color: lightblue;
+    padding: 0;
+    margin: 0;
+}
+nav ul {
+	font-size: 1.2em;
+    list-style-type: none;
+    padding-left: 20px;
+}
+#wrapper li a{
+	text-decoration: none;
+	color: #000032;
+	font-weight: bold;
+}
+nav a:visited {
+	color: #344873;
+}
+nav a:hover {
+	color: #FFFFFF;
+}
+h1 {
+	margin-bottom: 0;
+    margin-top: 0;
+	padding: 10px;
+    color: white;
+    display: inline-block;
+}
+h2 {
+	color: #3399CC;
+}
+h1,
+h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+#contact {
+	font-size: 90%;
+}
+dt {
+	color: #000033;
+}
+footer {
+    display: inline-block;
+	font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+	font-size: 80%;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    margin-left: 189px;
+    width: calc(100% - 201px);
+    border-right: 2px solid white;
+}
+#wrapper #content img {
+	float: left;
+	padding-right: 30px;
+}
+#content ul{
+	list-style-image: url("marker.gif");
+	padding-left: 0;
+}
+#content ul li {
+    list-style-position: inside;
+}
+#content p span {
+    display: inline;
+	color: #4d4dff;
+	font-weight: bold;
+}
+
+#content #contact span {
+	color: #4d4dff;
+	font-weight: bold;
+}
+
