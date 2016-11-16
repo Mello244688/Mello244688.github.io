@@ -1,3 +1,15 @@
+/*
+ File: /~smello/index.html
+ 91.461 Assignment 3: Style a Site With Eternal css
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author. 
+
+Description: This is just a simple webpage that shows some info about myself
+Date created: 9/12/2016
+*/
+
 header, hgroup, nav, footer, figure, figcaption, aside, section, article {
 	display: block;
 }
@@ -51,10 +63,10 @@ nav ul {
 	color: #000032;
 	font-weight: bold;
 }
-nav a:visited {
+#wrapper nav a:visited {
 	color: #344873;
 }
-nav a:hover {
+#wrapper nav a:hover {
 	color: #FFFFFF;
 }
 h1 {
