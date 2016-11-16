@@ -91,7 +91,7 @@ Date created: 10/04/2016 */
 }
 
 html {
-	background-image: url("/images/snow.jpg");
+	background-image: url("../images/snow.jpg");
 	background-size: cover;
 	padding: 40px;
 }
