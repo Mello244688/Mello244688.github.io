@@ -1,5 +1,5 @@
 /* File: /js/HW6.js
- 91.461 Assignment 6: Creating an Interactive Dynamic Table
+ 91.461 Assignment 7: Creating Dynamic Table with validation plugin
  Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
  Copyright (c) 2016 by Scott Mello. All rights reserved. May be
  freely copied or excerpted for educational purposes with credit to the
