@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+ File: HW6_HTML.html
+ 91.461 Assignment 6: Creating an Interactive Dynamic Table
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author. 
+
+Description: The is the html for a single page web app that dynamically creates 
+             a multiplication table based on form input from the user
+Date created: 10/24/2016
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Homework 7</title>
+        <!-- stylesheets -->
+        <link rel="stylesheet" type="text/css" href="css/HW7.css" >
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+        <script src="js/HW7.js"></script>
+    </head>
+    <body>
+        <div id="NumberForm">
+            <form id="myTableForm">
+                <div id=inputs>
+                    <p>
+                        <label>Multiplicand Start Range<span> (number)</span>:</label>
+                        <br>
+                        <input id="MultiplicandStart" name="input1" type="text">
+                    </p>
+                    <p>
+                        <label>Multiplicand End Range<span> (number)</span>:</label>
+                        <br>
+                        <input id="MultiplicandEnd" name="input2" type="text">
+                    </p>
+                    <p>
+                        <label>Multiplier Start Range<span> (number)</span>:</label>
+                        <br>
+                        <input id="MultiplierStart" name="input3" type="text">
+                    </p>
+                    <p>
+                        <label>Multiplier End Range<span> (number)</span>:</label>
+                        <br>
+                        <input id="MultiplierEnd" name="input4" type="text">
+                    </p>
+                </div>
+                <div id="buttons">
+                    <p>
+                        <input type="submit" value="Submit" id="submitButton">
+                        <br>
+                        <input type="reset" value="Reset" id="resetButton">
+                    </p>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
