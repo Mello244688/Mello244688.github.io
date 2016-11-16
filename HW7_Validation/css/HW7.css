@@ -8,7 +8,7 @@ author.
 
 Description: The is the CSS for a single page web app that dynamically creates 
              a multiplication table based on form input from the user
-Date created: 10/24/2016
+Date created: 11/16/2016
 */
 
 /* setting the backround color on the page */
@@ -93,10 +93,6 @@ input[type=reset]:hover, input[type=submit]:hover {
 span {
     font-size: 0.8em;
 }
-/* setting error messages to have no margins */
-#myTableForm span.help-block.form-error {
-    margin: 0;
-}
 
 /* height of input boxes p element*/
 #inputs {
@@ -108,15 +104,18 @@ span {
     height: 17%;
 }
 
+/* styling the error messages */
 #inputs p label:not(:first-child) {
     color: red;
     font-size: .8em;
 }
 
+/* red border in input box for wrong input */
 input.error {
    border: 1px solid red; 
 }
 
+/* green border in input box for valid input */
 input.valid {
     border: 1px solid green;
 }
