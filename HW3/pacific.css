@@ -51,10 +51,10 @@ nav ul {
 	color: #000032;
 	font-weight: bold;
 }
-nav a:visited {
+#warpper nav a:visited {
 	color: #344873;
 }
-nav a:hover {
+#wrapper nav a:hover {
 	color: #FFFFFF;
 }
 h1 {
