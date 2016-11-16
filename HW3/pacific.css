@@ -5,7 +5,7 @@ html, body {
     height: 100%;
 }
 body {
-	background-image: url("ptrbackground.JPG");
+	background-image: url("ptrbackground.jpg");
 	color: #666666;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -13,7 +13,7 @@ header {
     display:inline-block;
     width: 100%;
     height: 56px;
-    background-image: url("sunset.JPG");
+    background-image: url("sunset.jpg");
     background-repeat: no-repeat;
     background-position: right;
     background-color: #000032;
