@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+ File: HW6_HTML.html
+ 91.461 Assignment 8: Using the jQuery UI Slider and Tab Widgets
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author. 
+
+Description: The purpose of this assignment is to implement tabs and sliders in
+             the previous HW7.
+Date created: 11/20/2016
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Homework 8</title>
+        <!-- stylesheets -->
+        <link rel="stylesheet" type="text/css" href="css/HW8.css" >
+        <link href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <script src="js/HW8.js"></script>
+    </head>
+    <body>
+		<div id="tabs">
+			<ul id="tabList">
+				<li><a href="#NumberForm">Form</a></li>
+			</ul>
+			<div id="NumberForm">
+				<form id="myTableForm">
+					<div id="inputs">
+                        <div id="Multiplicands">
+                            <div id="MultiplicandBegin">
+                                <p>
+                                    <label>Multiplicand Start Range<span> (-100 to 100)</span>:</label>
+                                    <br>
+                                    <div id="slider1"></div>
+                                    <input id="MultiplicandStart" name="input1" type="text"> 
+                                </p>
+                            </div>
+                            <div id="MultiplicandEndRange">
+                                <p>
+                                    <label>Multiplicand End Range<span> (-100 to 100)</span>:</label>
+                                    <br>
+                                    <div id="slider2"></div>
+                                    <input id="MultiplicandEnd" name="input2" type="text" data-error="error">
+                                </p>
+                            </div>
+                        </div>
+                        <div id="error1"></div>
+                        <div id="error2"></div>
+                        <div id="Multipliers">
+                            <div id="MultiplierBegin">
+                                <p>
+                                    <label>Multiplier Start Range<span> (-100 to 100)</span>:</label>
+                                    <br>
+                                    <div id="slider3"></div>
+                                    <input id="MultiplierStart" name="input3" type="text">
+                                </p>
+                            </div>
+                            <div id="MultiplierEndRange">
+                                <p>
+                                    <label>Multiplier End Range<span> (-100 to 100)</span>:</label>
+                                    <br>
+                                    <div id="slider4"></div>
+                                    <input id="MultiplierEnd" name="input4" type="text">
+                                </p>
+                            </div>
+                        </div>
+                        <div id="error3"></div>
+                        <div id="error4"></div>
+					<div id="buttons">
+						<p>
+							<input type="reset" value="Reset" id="resetButton">
+                            <button type = "button" id="deleteTabsButton">Delete Tabs</button>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+    </body>
+</html>

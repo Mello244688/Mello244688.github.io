@@ -1,0 +1,146 @@
+/*
+ File: /css/HW8.css
+ 91.461  Assignment 8: Using the jQuery Slider and Tab widgets
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author. 
+
+Description: The purpose of this assignment is to implement tabs and sliders in
+              the previous HW7.
+Date created: 11/16/2016
+*/
+
+/* setting the backround color on the page */
+html {
+    background-color: #e9fce9;
+    height: 100%;
+    min-width: 400px;
+}
+body {
+    height: 97%;
+}
+/* formatting Div around the form and reset button */
+#NumberForm {
+    border: 2px solid #3377ff;
+    width: 75%;
+    background-color: #FFFFE6;
+    border-radius: 20px;
+    min-width: 300px;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    padding: 5px;
+}
+
+/* adding some padding to the form only */
+#NumberForm #myTableForm {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 100%;
+    min-height: 100%;
+}
+
+/* divs around the text inputs */
+#MultiplicandStart, #MultiplicandEnd, #MultiplierStart, #MultiplierEnd {
+    display: inline-block;
+    width: 100%;
+}
+
+/* labels for the input boxes */
+label {
+   display: inline-block;
+   width: 100%;
+   color: #3377ff;
+}
+
+/* formatting only text inputs */
+input[type=text], select {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* formatting the reset and submit input (button) */
+input[type=reset], #deleteTabsButton {
+    cursor: pointer;
+    padding: 14px 20px;
+    width: 49.5%;
+    border: 0px;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 5px;
+}
+
+/* setting the background color when hovering on the reset and submit input (button) */
+input[type=reset]:hover, #deleteTabsButton:hover {
+    background-color: #45a049
+}
+
+span {
+    font-size: 0.8em;
+}
+
+/* styling the error messages */
+#inputs label.error {
+    color: red;
+    font-size: .8em;
+}
+
+/* red border in input box for wrong input */
+input.error {
+   border: 1px solid red; 
+}
+
+/* green border in input box for valid input */
+input.valid {
+    border: 1px solid green;
+}
+
+/* div for tabs */
+#tabs {
+	height: 100%;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#inputs {
+    width: 100%;
+}
+
+/* used for formatting input divs */
+#MultiplicandEndRange, #MultiplicandBegin, #MultiplierBegin, #MultiplierEndRange, #error1, #error2, #error3, #error4  {
+    display: inline-block;
+    width: 49.5%;
+    padding: 0;
+    margin: 0;
+}
+
+/* circle to exit tab */
+.ui-icon-circle-close {
+    cursor:pointer;
+}
+
+#tabs #NumberForm #TabDeletionForm #TabDeletionInputs div {
+    display: inline-block;
+    border: 1px solid #3377ff;
+    padding: 5px;
+    margin-right: 5px;
+    background-color: #f6f6f6;
+    color: #1c94c4;
+    border-radius: 7px;
+}
+
+#tabs #NumberForm #TabDeletionButtons {
+    padding: 15px;
+    display: block;
+}
