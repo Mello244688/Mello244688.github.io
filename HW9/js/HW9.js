@@ -90,29 +90,35 @@ function SetUpDictionary() {
 
 function SetupDragAndDrop() {
     $(".selector").draggable({
-        delay: 100,
-        containment: "body",
-        revert: "invalid"
+		delay: 100,
+		containment: "body",
+		revert: "invalid"
     });
     
     $(".target").droppable({
         tolerance: "intersect" ,
         drop : function(event, ui) {
-           $(ui.draggable).detach().css({top: 0,left: 0}).appendTo("#" + this.id); //code from Barry Pitman on stackoverflow
-           $('#' + this.id).droppable("disable");
-           MakeTargetsDroppableIfChanged();
-           LastLetterPlayed(ui.draggable.attr('id'), this);
-
-           if(ui.draggable.attr('id') == "_") {
-               PromptForBlank();
-           }
+			$(ui.draggable).detach().css({top: 0,left: 0}).appendTo("#" + this.id); //code from Barry Pitman on stackoverflow
+			$('#' + this.id).droppable("disable");
+			MakeTargetsDroppableIfChanged();
+			LastLetterPlayed(ui.draggable.attr('id'), this);
+			if(ui.draggable.attr('id') == "_") {
+			   PromptForBlank(ui.draggable);
+			}
         }
     });  
 }
+  
+function PromptForBlank(tile) {
 
-function PromptForBlank() {
-   var tile = prompt("Enter a letter to use as the blank tile");
-   alert(tile);
+	var tileRequested = prompt("Enter a letter to use as the blank tile");
+
+	if (tileRequested.length == 1 && tileRequested.match(/[a-zA-Z]+/g )) {
+	   tileRequested = tileRequested.toUpperCase();
+	   $(tile).parent().attr('name', "_"); //used for resetting tiles
+	   $(tile).attr('src', 'Scrabble_Tiles/' + GetImage(tileRequested.trim()));
+	   $(tile).attr('id', tileRequested);
+	}
 }
 
 function SetupScrabble() {
@@ -238,16 +244,19 @@ function GetNumRemainingTiles() {
 
 function SubmitClickHandler() {
     
+	var totalScore = +($('#totalScore').text());
     var word = GetWord();
     var wordScore = 0;
     
-    alert('Your word is: ' + word + " Valid: " + IsValidWord(word));
     if (!IsValidWord(word)) {
         ResetAllLetters();
     }
     else {
         wordScore = CalculateWordScore();
         $('#wordScore').text(wordScore);
+		totalScore = +($('#totalScore').text());
+		totalScore += wordScore;
+		$('#totalScore').text(totalScore);
     }
 }
 
@@ -273,6 +282,12 @@ function ResetAllLetters() {
     for (var i = 1; i <= $('#board div').length; i++) {
         
         if ( $('#target' + i).has('img').length) {
+			
+			if ($('#target' + i).attr('name') == "_") {
+				$('#target' + i).removeAttr('name');
+				$('#target' + i).children('img').attr('id', "_");
+				$('#target' + i).children('img').attr('src', "Scrabble_Tiles/" + GetImage("_"));
+			}
             ResetLetter($('#target' + i +' img'));
             $('#target' + i).droppable('enable');
         }
@@ -299,7 +314,6 @@ function MakeTargetsDroppableIfChanged () {
 
 function CalculateWordScore() {
     
-    var totalScore = +($('#totalScore').text());
     var id;
     var wordScore = 0;
     var isDoubleWordScore = false;
@@ -334,6 +348,9 @@ function NewGame() {
     
     $('#submitButton').prop("disabled", false); //disabling submit button
     $('#resetButton').prop("disabled", false); //disabling reset button
+	$('#letterPlayed').text('N/A');
+	$('#wordScore').text(0);
+	$('#totalScore').text(0);
     
     for (var i = 1; i <= $('#board div').length; i++) {
         $('#board div img').remove();
