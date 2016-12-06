@@ -1,0 +1,74 @@
+/*
+ File: HW9.css
+ 91.461 Assignment 8: Implementing a bit of scrabble with Drag-and-Drop
+ Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
+ Copyright (c) 2016 by Scott Mello. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author. 
+
+Description: The purpose of this assignment is to implement a line of scrabble
+             using drag and drop.
+Date created: 12/03/2016 */
+
+html, body {
+    height: 98.5%;
+    width: 99.5%;
+    background-color: #fcf1e9;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+#target2 {
+    background-image: url("../images/double_word_score.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#target6 {
+    background-image: url("../images/triple_letter_score.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#board {
+    background-color: red;
+    height: 84px;
+    width: 620px;
+}
+
+#rack {
+    background-color: green;
+    height: 84px;
+    width: 620px;
+}
+
+#target1, #target2, #target3, #target4, #target5, #target6, #target7 {
+    border: 1px solid black;
+    height: 98%;
+    width: 13.4%;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+#rack_tile1, #rack_tile2, #rack_tile3, #rack_tile4, #rack_tile5, #rack_tile6, #rack_tile7 {
+    border: 1px solid black;
+    height: 98%;
+    width: 13.4%;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}
+
+#submitButton, #resetButton, #endGame, #newGame, #continueGame {
+    padding: 5px;
+    margin: 5px;
+}
