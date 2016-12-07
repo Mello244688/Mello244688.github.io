@@ -469,7 +469,7 @@ function NewGame() {
 */
 function GameOver() {
     
-    if($('#gameOver').length < 0) {
+    if($('#gameOver').length <= 0) {
         $('body').prepend("<p id='gameOver'><b>GAME OVER!<b><p>");
         $('#submitButton').prop("disabled", true); //disabling submit button
         $('#resetButton').prop("disabled", true); //disabling reset button
