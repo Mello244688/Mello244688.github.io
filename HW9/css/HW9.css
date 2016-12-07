@@ -1,6 +1,6 @@
 /*
  File: HW9.css
- 91.461 Assignment 8: Implementing a bit of scrabble with Drag-and-Drop
+ 91.461 Assignment 9: Implementing a bit of scrabble with Drag-and-Drop
  Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
  Copyright (c) 2016 by Scott Mello. All rights reserved. May be
 freely copied or excerpted for educational purposes with credit to the
@@ -10,40 +10,72 @@ Description: The purpose of this assignment is to implement a line of scrabble
              using drag and drop.
 Date created: 12/03/2016 */
 
-html, body {
-    height: 98.5%;
+body {
+    height: 97.5%;
     width: 99.5%;
-    background-color: #fcf1e9;
+}
+
+/* defaults */
+html {
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* setting page background image */
+html {
+    background-image: url(../images/snow.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
 
 img:hover {
     cursor: pointer;
 }
 
+/* double word score bonus */
 #target2 {
     background-image: url("../images/double_word_score.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
 
+/* triple letter score bonus */
 #target6 {
     background-image: url("../images/triple_letter_score.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
 
+/* addng images for non bonus squares */
+#target1, #target3, #target4, #target5, #target7 {
+    background-image: url("../images/tree.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* div where the player plays tiles */
 #board {
     background-color: red;
     height: 84px;
     width: 620px;
+    margin: 0 auto;
+    margin-top: 25px;
+    border: 1px solid black;
 }
 
+/* div that holds  player tiles*/
 #rack {
     background-color: green;
     height: 84px;
     width: 620px;
+    margin: 0 auto;
+    margin-top: 25px;
+    border: 1px solid black;
 }
 
+/* divs that get dropped on */
 #target1, #target2, #target3, #target4, #target5, #target6, #target7 {
     border: 1px solid black;
     height: 98%;
@@ -53,6 +85,7 @@ img:hover {
     margin: 0;
 }
 
+/* divs that hold rack tiles */
 #rack_tile1, #rack_tile2, #rack_tile3, #rack_tile4, #rack_tile5, #rack_tile6, #rack_tile7 {
     border: 1px solid black;
     height: 98%;
@@ -61,14 +94,71 @@ img:hover {
     padding: 0;
     margin: 0;
 }
-
+/* defaults for images */
 img {
     width: 100%;
     height: 100%;
     background-size: contain;
 }
 
-#submitButton, #resetButton, #endGame, #newGame, #continueGame {
+/* adding some padding and margin to buttons */
+#submitButton, #resetButton, #newGame {
     padding: 5px;
     margin: 5px;
+}
+
+#buttonsDiv, #scoresDiv {
+    text-align: center;
+    width: 100%;
+}
+
+/* changing background of buttons div */
+#buttonsDiv {
+    background-image: url("../images/wood.jpg");
+}
+
+/* div for buttons and scores */
+#interfaceDiv {
+    width: 50%;
+    margin: 0 auto;
+    min-width: 500px;
+    max-width: 620px;
+    margin-top: 40px;
+    border-radius: 5px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: #e6ffe6;
+}
+
+/* div that holds scores */
+#scoresDiv {
+    padding-top: 10px;
+    border-top: 1px solid black;
+}
+
+/* formatting label font */
+label {
+    font-size: 1.2em;
+    color: red;
+}
+
+/* formatting and styling buttons */
+button {
+    cursor: pointer;
+    padding: 14px 20px;
+    width: 20%;
+    border: 0px;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* changing button color on hover */
+button:hover {
+    background-color: #45a049;
+}
+
+/* bolding paragraph font below labels */
+#scoresDiv p {
+    font-weight: bold;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
  File: HW9_HTML.html
- 91.461 Assignment 8: Implementing a bit of scrabble with Drag-and-Drop
+ 91.461 Assignment 9: Implementing a bit of scrabble with Drag-and-Drop
  Scott Mello, student, UMass Lowell Computer Science, scott_mello@student.uml.edu
  Copyright (c) 2016 by Scott Mello. All rights reserved. May be
 freely copied or excerpted for educational purposes with credit to the
@@ -20,7 +20,6 @@ Date created: 12/03/2016
         <link href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <script src="js/HW9.js"></script>
     </head>
@@ -43,19 +42,20 @@ Date created: 12/03/2016
             <div id="target6" class="target"></div>
             <div id="target7" class="target"></div>
         </div>
-        <div id="buttonsDiv">
-            <button id="submitButton">Submit</button>
-            <button id="resetButton">Reset Letters</button>
-            <button id="newGame">New Game</button>
+        <div id="interfaceDiv">
+            <div id="buttonsDiv">
+                <button id="submitButton">Submit</button>
+                <button id="resetButton">Reset Letters</button>
+                <button id="newGame">New Game</button>
+            </div>
+            <div id="scoresDiv">
+                <label><b>Last Letter Played:</b></label>
+                <p id="letterPlayed">N/A</p>
+                <label><b>Last Word Score:</b></label>
+                <p id="wordScore">0</p>
+                <label><b>Total Score:</b></label>
+                <p id="totalScore">0</p>
+            </div>
         </div>
-        <div id="ScoresDiv">
-            <label for="letterPlayed"><b>Last Letter Played:</b></label>
-            <p id="letterPlayed">N/A</p>
-            <label for="wordScore"><b>Last Word Score:</b></label>
-            <p id="wordScore">0</p>
-            <label for="totalScore"><b>Total Score:</b></label>
-            <p id="totalScore">0</p>
-        </div>
-        
     </body>
 </html>
