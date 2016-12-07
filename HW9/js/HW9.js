@@ -80,13 +80,16 @@ function SetUpDictionary() {
     //code supplied by Jason Downing on piazza
     // Do a jQuery Ajax request for the text dictionary
     $.get( "https://raw.githubusercontent.com/Mello244688/Mello244688.github.io/master/HW9/dictionary/dict.txt", function( txt, status ) {
-        // Get an array of all the words
-        var words = txt.split( "\n" );
-     
-        // And add them as properties to the dictionary lookup
-        // This will allow for fast lookups later
-        for ( var i = 0; i < words.length; i++ ) {
-            dict[ words[i] ] = true;
+
+        if (status == "success") {
+            // Get an array of all the words
+            var words = txt.split( "\n" );
+         
+            // And add them as properties to the dictionary lookup
+            // This will allow for fast lookups later
+            for ( var i = 0; i < words.length; i++ ) {
+                dict[ words[i] ] = true;
+            } 
         }
     });
 }
