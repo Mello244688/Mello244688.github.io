@@ -8,7 +8,7 @@ author.
 
 Description: The is the CSS for a single page web app that dynamically creates 
              a multiplication table based on form input from the user
-Date created: 11/16/2016
+Date created: 10/24/2016
 */
 
 /* setting the backround color on the page */
@@ -25,11 +25,10 @@ body {
     display: inline-block;
     border: 2px solid #3377ff;
     width: 25%;
-    height: 85%;
     background-color: #FFFFE6;
     border-radius: 20px;
     min-width: 300px;
-    min-height: 591px;
+    min-height: 500px;
     font-size: 18px;
     margin-left: 15px;
     margin-right: 25px;
@@ -90,32 +89,35 @@ input[type=reset]:hover, input[type=submit]:hover {
     background-color: #45a049
 }
 
-span {
-    font-size: 0.8em;
-}
-
-/* height of input boxes p element*/
-#inputs {
-    height: 75%;
-}
-
-/* height of the submit and reset p element */
-#buttons {
-    height: 17%;
-}
-
-/* styling the error messages */
-#inputs p label:not(:first-child) {
-    color: red;
-    font-size: .8em;
-}
-
-/* red border in input box for wrong input */
+/* red border around input errors */
 input.error {
    border: 1px solid red; 
 }
 
-/* green border in input box for valid input */
+/* green border around valid input */
 input.valid {
     border: 1px solid green;
+}
+
+/* div for error messages */
+#error1, #error2, #error3, #error4 {
+    font-size: 0.8em;
+    height: 10px;
+}
+
+/* color for error messages */
+#inputs div label {
+    color: red;
+}
+
+/* removing and padding and margins around inputs  */
+#inputs p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* padding around buttons */
+#myTableForm #buttons p {
+    padding-top: 10px;
+    padding-bottom: 5px;
 }

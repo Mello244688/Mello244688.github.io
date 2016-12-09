@@ -84,7 +84,8 @@ function addEventListeners() {
 function setupValidation() {
     //custom validation rule for pos and neg integers
     jQuery.validator.addMethod("nums", function(value, element) {
-        return this.optional(element)|| /-?[0-9]{0,10}/.test(value) & $.isNumeric(value);
+        return /-?[0-9]{0,10}/.test(value) 
+                    & $.isNumeric(value) & value >= -100 & value <= 100;
     }, "Not a valid number. Enter a Number");
     
     validator = $("#myTableForm").validate({
@@ -109,11 +110,19 @@ function setupValidation() {
                 nums: true
             }
         },
-        messages: { //error messages
-            input1: "Not a number. Enter a Number",
-            input2: "Not a number. Enter a Number",
-            input3: "Not a number. Enter a Number",
-            input4: "Not a number. Enter a Number"
+        errorPlacement: function(error, element) {
+            if (element.attr("id") == "MultiplicandStart") {
+                error.appendTo('#error1');
+            }
+            else if (element.attr("id") == "MultiplicandEnd") {
+                error.appendTo('#error2');
+            }
+            else if (element.attr("id") == "MultiplierStart") {
+                error.appendTo('#error3');
+            }
+            else if (element.attr("id") == "MultiplierEnd") {
+                error.appendTo('#error4');
+            }
         }
     });
 }
