@@ -51,7 +51,7 @@ body {
 }
 
 /* labels for the input boxes */
-label {
+#inputs div label {
    display: inline-block;
    width: 100%;
    color: #3377ff;
@@ -102,13 +102,9 @@ input.valid {
 /* div for error messages */
 #error1, #error2, #error3, #error4 {
     font-size: 0.8em;
-    height: 10px;
+    height: 15px;
 }
 
-/* color for error messages */
-#inputs div label {
-    color: red;
-}
 
 /* removing and padding and margins around inputs  */
 #inputs p {
@@ -120,4 +116,14 @@ input.valid {
 #myTableForm #buttons p {
     padding-top: 10px;
     padding-bottom: 5px;
+}
+
+/* divs around inputs */
+#myTableForm #inputs #input1, #input2, #input3, #input4 {
+    padding-top: 15px;
+}
+
+/* error message */
+#NumberForm #myTableForm #inputs div div .error {
+    color: red;
 }
