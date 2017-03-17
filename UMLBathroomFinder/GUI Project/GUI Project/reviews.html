@@ -106,19 +106,33 @@
     </nav>
 
    <div class="container">
-      <form action="">
-         <label for="your_rating">Your Rating:</label><br>
-         <input type="hidden" id="your_rating" value="0">
-         <div id="your_rating_div"></div>
+      <form action="" id="review_form" class="form-horizontal">
          <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title" value="Enter title ...">
+            <label for="your_rating" class="col-sm-2 control-label">Your Rating:</label><br>
+            <div class="col-sm-10">
+               <input class="form-control" type="hidden" id="input1" value="0" name="input1">
+            </div>
+            <div id="your_rating_div" class="col-sm-10"></div>
+            <div id="error1"></div>
          </div>
          <div class="form-group">
-            <label for="write_review">Review:</label>
-            <textarea class="form-control" name="write_review" cols="40" rows="5">Write a review ...</textarea>
+            <label for="title" class="col-sm-2 control-label">Title:</label>
+            <div class="col-sm-10" id="input2_div">
+               <input type="text" class="form-control" id="title" placeholder="Enter title ..." name="input2">
+            </div>
          </div>
-         <input type="submit" class="btn-primary">
+         <div class="form-group">
+            <label for="write_review" class="col-sm-2 control-label">Review:</label>
+            <div class="col-sm-10" id="input3_div">
+               <textarea class="form-control" name="input3" cols="40" rows="5" id="review" placeholder="Write a review ..."></textarea>
+            </div>
+         </div>
+         <div class="form-group">
+            <label for="submit_button" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10">
+               <button type="submit" class="btn btn-primary">Submit Review</button>
+            </div>
+         </div>
       </form>
    </div>
 
@@ -138,5 +152,7 @@
     <script src="js/jquery.rateit.min.js"></script>
     
     <script src="js/reviews.js"></script>
+    
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
   </body>
 </html>
